@@ -1,14 +1,32 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
-  <title>Example</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>My syte</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 </head>
+
 <body>
+<div class="col-md-9 container" id="head_container">
+			<div class="page-hdr text-center"></span> <%= $title%></div>
+		</div>
 
-<%= yield %>
-
+		<div class="col-md-9 container">
+		    <%if @error && @error.length > 0 then %>
+		        <div class="alert alert-danger"><%=@error%></div>
+		    <% end %>
+		    <%if @success && @success.length > 0 then %>
+		        <div class="alert alert-success"><%=@success%></div>
+		    <% end %>
+		    <%= yield %>	
+		</div>
+	</div> 
 </body>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/bootstrap/jquery-1.9.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+    
 </html>
