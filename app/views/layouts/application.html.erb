@@ -1,32 +1,25 @@
 <!DOCTYPE html> 
 <html>
+
 <head>
 	<title>My syte</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- Bootstrap -->
-	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+	<link data-require="bootstrap@4.0.0-alpha.2" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
 </head>
 
 <body>
-<div class="col-md-9 container" id="head_container">
-			<div class="page-hdr text-center"></span> <%= $title%></div>
-		</div>
 
-		<div class="col-md-9 container">
-		    <%if @error && @error.length > 0 then %>
-		        <div class="alert alert-danger"><%=@error%></div>
-		    <% end %>
-		    <%if @success && @success.length > 0 then %>
-		        <div class="alert alert-success"><%=@success%></div>
-		    <% end %>
-		    <%= yield %>	
-		</div>
-	</div> 
-</body>
+<div class="container">
+    <%if @error && @error.length > 0 then %>
+        <div class="alert alert-danger"><%=@error%></div>
+    <% end %>
+    <%if @success && @success.length > 0 then %>
+        <div class="alert alert-success"><%=@success%></div>
+    <% end %>
+    <%= yield %>	
+</div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/bootstrap/jquery-1.9.1.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/bootstrap/js/bootstrap.min.js"></script>
-    
+</body>    
 </html>
