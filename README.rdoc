@@ -1,1 +1,7 @@
-== Clear project for easy bootstrap - rails web development
+== Clear project for easy rails web development
+
+used gems and frameworks:
+
+*Rails
+*Bootstrap
+*Devise
