@@ -3,5 +3,7 @@
 used gems and frameworks:
 
 *Rails
+
 *Bootstrap
+
 *Devise
