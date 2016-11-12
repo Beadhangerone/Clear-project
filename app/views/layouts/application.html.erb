@@ -19,8 +19,11 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <center><div class="alert alert-success"><%= notice %></div></center>
+    <% elsif alert %>
+    <center><div class="alert alert-warning"><%= alert %></div></center>
+    <%end%>
     <%= yield %>
   </body>
 </html>
