@@ -46,16 +46,18 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-  <div class="container">
+   <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <% if notice %>
+          <center><div class="alert alert-success"><%= notice %></div></center>
+        <% elsif alert %>
+          <center><div class="alert alert-warning"><%= alert %></div></center>
+        <%end%>
 
-
-    <% if notice %>
-      <center><div class="alert alert-success"><%= notice %></div></center>
-    <% elsif alert %>
-    <center><div class="alert alert-warning"><%= alert %></div></center>
-    <%end%>
-
-    <%= yield %>
+        <%= yield %>
+      </div>
+    </div>
   </div>
   </body>
 </html>
